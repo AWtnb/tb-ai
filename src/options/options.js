@@ -1,15 +1,43 @@
-document.getElementById("url-save-button").addEventListener("click", function () {
-  const url = document.getElementById("url-input").value;
-  if (0 < String(url).trim().length) {
-    browser.storage.local.set({ llmUrl: url });
-  }
-});
-
-document.getElementById("prompt-save-button").addEventListener("click", function () {
-  const prompt = document.getElementById("prompt-input").value;
+const registerPrompt = (prompt) => {
   if (0 < String(prompt).trim().length) {
     browser.storage.local.set({ promptInput: prompt });
   }
+};
+
+const registerUrl = (url) => {
+  if (0 < String(url).trim().length) {
+    browser.storage.local.set({ llmUrl: url });
+  }
+};
+
+document.getElementById("url-input").addEventListener("keyup", async (e) => {
+  if (0 < e.target.value.length) {
+    return;
+  }
+  document.getElementById("url-save-button").disabled = true;
+  const mod = await import("../default.js");
+  document.getElementById("url-input").placeholder = mod.DEFAULT_LLM_URL;
+  registerUrl(mod.DEFAULT_LLM_URL);
+});
+
+document.getElementById("prompt-input").addEventListener("keyup", async (e) => {
+  if (0 < e.target.value.length) {
+    return;
+  }
+  document.getElementById("prompt-save-button").disabled = true;
+  const mod = await import("../default.js");
+  document.getElementById("prompt-input").placeholder = mod.DEFAULT_PROMPT;
+  registerPrompt(mod.DEFAULT_PROMPT);
+});
+
+document.getElementById("url-save-button").addEventListener("click", () => {
+  const url = document.getElementById("url-input").value;
+  registerUrl(url);
+});
+
+document.getElementById("prompt-save-button").addEventListener("click", () => {
+  const prompt = document.getElementById("prompt-input").value;
+  registerPrompt(prompt);
 });
 
 document.addEventListener("DOMContentLoaded", async () => {
