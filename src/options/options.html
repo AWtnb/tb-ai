@@ -4,14 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thunderbird-ai Options</title>
+    <link rel="stylesheet" type="text/css" href="options.css">
   </head>
   <body>
-    <h2>Set URL for Opening</h2>
-    <label for="url-input">URL:<input type="text" id="url-input" /> </label>
-    <button id="url-save-button">Save</button>
+    <div class="box">
+      <label for="url-input">URL:<input type="text" id="url-input" /> </label>
+      <button id="url-save-button">Save</button>
+    </div>
 
-    <label for="prompt-input">Prompt:<textarea id="prompt-input"></textarea></label>
-    <button id="prompt-save-button">Save</button>
+    <div class="box">
+      <label for="prompt-input">Prompt:</label>
+      <textarea id="prompt-input"></textarea>
+      <button id="prompt-save-button">Save</button>
+    </div>
 
     <script src="options.js"></script>
   </body>

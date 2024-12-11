@@ -12,6 +12,7 @@ const registerUrl = (url) => {
 
 document.getElementById("url-input").addEventListener("keyup", async (e) => {
   if (0 < e.target.value.length) {
+    document.getElementById("url-save-button").disabled = false;
     return;
   }
   document.getElementById("url-save-button").disabled = true;
@@ -22,6 +23,7 @@ document.getElementById("url-input").addEventListener("keyup", async (e) => {
 
 document.getElementById("prompt-input").addEventListener("keyup", async (e) => {
   if (0 < e.target.value.length) {
+    document.getElementById("prompt-save-button").disabled = false;
     return;
   }
   document.getElementById("prompt-save-button").disabled = true;
