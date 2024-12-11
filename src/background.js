@@ -1,3 +1,13 @@
+/*
+https://developer.thunderbird.net/add-ons/hello-world-add-on
+
+https://webextension-api.thunderbird.net/en/128-esr-mv3/index.html
+
+https://github.com/thunderbird/webext-examples/
+
+https://github.com/itagagaki/DeepL-Selected-Text/
+*/
+
 const handleMenuClick = async (selectedText) => {
   const mod = await import("./default.js");
 
@@ -17,7 +27,7 @@ messenger.menus.removeAll();
 messenger.menus.create(
   {
     id: MENU_ID,
-    title: "Copy with prompt and ask AI",
+    title: "コピーしてLLMを開く",
     contexts: ["selection"],
   },
   () => {

@@ -1,12 +1,7 @@
 # README
 
-- Open LLM site on browser with button click.
-- Selected text on message pane is copied to clipboard with custom prompt
+以下のように動作するコンテキストメニューを追加する：
 
-https://developer.thunderbird.net/add-ons/hello-world-add-on
+1. 選択している文字列を設定したプロンプトの `{}` に挿入してコピーする
+1. LLMをブラウザで開く
 
-https://webextension-api.thunderbird.net/en/128-esr-mv3/index.html
-
-https://github.com/thunderbird/webext-examples/
-
-https://github.com/itagagaki/DeepL-Selected-Text/
