@@ -9,12 +9,10 @@ https://github.com/itagagaki/DeepL-Selected-Text/
 */
 
 const handleMenuClick = async (selectedText) => {
-  const mod = await import("./default.js");
-
   const [promptData, llmUrlData] = await Promise.all([browser.storage.local.get("promptInput"), browser.storage.local.get("llmUrl")]);
 
-  const prompt = promptData.promptInput || mod.DEFAULT_PROMPT;
-  const llmUrl = llmUrlData.llmUrl || mod.DEFAULT_LLM_URL;
+  const prompt = promptData.promptInput || browser.i18n.getMessage("defaultPrompt");
+  const llmUrl = llmUrlData.llmUrl || browser.i18n.getMessage("defaultLlmUrl");
 
   await Promise.all([navigator.clipboard.writeText(prompt.replace("{}", selectedText)), browser.windows.openDefaultBrowser(llmUrl)]).catch((err) => {
     console.error(err);
@@ -27,7 +25,7 @@ messenger.menus.removeAll();
 messenger.menus.create(
   {
     id: MENU_ID,
-    title: "コピーしてLLMを開く",
+    title: browser.i18n.getMessage("contextMenuTitle"),
     contexts: ["selection"],
   },
   () => {
@@ -37,7 +35,7 @@ messenger.menus.create(
   }
 );
 
-messenger.menus.onClicked.addListener(async (info, tab) => {
+messenger.menus.onClicked.addListener(async (info, _) => {
   if (info.menuItemId === MENU_ID) {
     handleMenuClick(info.selectionText);
   }

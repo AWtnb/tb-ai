@@ -1,12 +1,14 @@
 {
   "manifest_version": 3,
   "name": "Thunderbird-ai",
-  "description": "Open LLM site with selected text copied.",
+  "description": "__MSG_extensionDescription__",
   "version": "0.0.1",
   "author": "awtnb",
+  "homepage_url": "https://github.com/AWtnb/tb-ai",
+  "default_locale": "ja",
   "browser_specific_settings": {
     "gecko": {
-      "id": "awtnb.thunderbird-ai@example.com",
+      "id": "{13495efa-5648-6848-15f9-530e2ff44f12}",
       "strict_min_version": "128.0"
     }
   },

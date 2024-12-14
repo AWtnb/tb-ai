@@ -1,0 +1,20 @@
+{
+  "extensionDescription": {
+    "message": "選択したテキストを任意のプロンプトとしてコピーしてLLMをブラウザで開く"
+  },
+  "promptInputLabel": {
+    "message": "プロンプト"
+  },
+  "promptInputDetail": {
+    "message": "に選択している文字列が入ります。"
+  },
+  "defaultLlmUrl": {
+    "message": "https://gemini.google.com"
+  },
+  "defaultPrompt": {
+    "message": "以下のメール内容を要約して返信の文面を考えてください。\n--------\n{}"
+  },
+  "contextMenuTitle": {
+    "message": "コピーしてLLMを開く"
+  }
+}

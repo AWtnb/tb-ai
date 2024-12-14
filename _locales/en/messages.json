@@ -1,0 +1,20 @@
+{
+  "extensionDescription": {
+    "message": "Open LLM site with selected text copied."
+  },
+  "promptInputLabel": {
+    "message": "Prompt"
+  },
+  "promptInputDetail": {
+    "message": "is replaced with selected text."
+  },
+  "defaultLlmUrl": {
+    "message": "https://gemini.google.com"
+  },
+  "defaultPrompt": {
+    "message": "summarize the content of the following e-mail and consider the text of the reply.\n--------\n{}"
+  },
+  "contextMenuTitle": {
+    "message": "Copy with prompt and open LLM"
+  }
+}

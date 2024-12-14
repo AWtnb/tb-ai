@@ -1,20 +1,28 @@
 .box {
-    padding: 12px;
+  padding: 12px;
+}
+
+.box label {
+  font-weight: bold;
 }
 
 .box label,
 .box button,
 .box input,
 .box textarea {
-    display: block;
+  display: block;
 }
 
 .box input,
 .box textarea {
-    margin: 4px 0;
-    width: 100%;
+  margin: 4px 0;
+  width: 100%;
 }
 
 .box textarea {
-    min-height: 140px;
+  min-height: 140px;
+}
+
+#prompt-input-label::after {
+  content: ":";
 }

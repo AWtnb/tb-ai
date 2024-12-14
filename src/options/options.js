@@ -10,15 +10,17 @@ const registerUrl = (url) => {
   }
 };
 
+const DEFAULT_LLM_URL = browser.i18n.getMessage("defaultLlmUrl");
+const DEFAULT_PROMPT = browser.i18n.getMessage("defaultPrompt");
+
 document.getElementById("url-input").addEventListener("keyup", async (e) => {
   if (0 < e.target.value.length) {
     document.getElementById("url-save-button").disabled = false;
     return;
   }
   document.getElementById("url-save-button").disabled = true;
-  const mod = await import("../default.js");
-  document.getElementById("url-input").placeholder = mod.DEFAULT_LLM_URL;
-  registerUrl(mod.DEFAULT_LLM_URL);
+  document.getElementById("url-input").placeholder = DEFAULT_LLM_URL;
+  registerUrl(DEFAULT_LLM_URL);
 });
 
 document.getElementById("prompt-input").addEventListener("keyup", async (e) => {
@@ -27,9 +29,8 @@ document.getElementById("prompt-input").addEventListener("keyup", async (e) => {
     return;
   }
   document.getElementById("prompt-save-button").disabled = true;
-  const mod = await import("../default.js");
-  document.getElementById("prompt-input").placeholder = mod.DEFAULT_PROMPT;
-  registerPrompt(mod.DEFAULT_PROMPT);
+  document.getElementById("prompt-input").placeholder = DEFAULT_PROMPT;
+  registerPrompt(DEFAULT_PROMPT);
 });
 
 document.getElementById("url-save-button").addEventListener("click", () => {
@@ -43,14 +44,15 @@ document.getElementById("prompt-save-button").addEventListener("click", () => {
 });
 
 document.addEventListener("DOMContentLoaded", async () => {
-  const mod = await import("../default.js");
+  document.getElementById("prompt-input-label").innerText = browser.i18n.getMessage("promptInputLabel");
+  document.getElementById("prompt-input-detail").insertAdjacentText("beforeend", browser.i18n.getMessage("promptInputDetail"));
 
   browser.storage.local.get("llmUrl").then((result) => {
     const urlInput = document.getElementById("url-input");
     if (result.llmUrl) {
       urlInput.value = result.llmUrl;
     } else {
-      urlInput.value = mod.DEFAULT_LLM_URL;
+      urlInput.value = DEFAULT_LLM_URL;
     }
   });
 
@@ -59,7 +61,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (result.promptInput) {
       promptInput.value = result.promptInput;
     } else {
-      promptInput.value = mod.DEFAULT_PROMPT;
+      promptInput.value = DEFAULT_PROMPT;
     }
   });
 });
