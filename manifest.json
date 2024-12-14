@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Thunderbird-ai",
   "description": "__MSG_extensionDescription__",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "awtnb",
   "homepage_url": "https://github.com/AWtnb/tb-ai",
   "default_locale": "ja",
