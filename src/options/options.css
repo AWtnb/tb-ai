@@ -26,3 +26,11 @@
 #prompt-input-label::after {
   content: ":";
 }
+
+.button-wrapper {
+  display: flex;
+}
+.button-wrapper button[disabled] + .mark::after {
+  margin-left: 0.5em;
+  content: "\2714";
+}
